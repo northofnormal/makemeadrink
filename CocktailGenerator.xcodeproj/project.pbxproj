@@ -20,7 +20,7 @@
 
 /* Begin PBXFileReference section */
 		23AA3116F2C5D88B33B9A4CE /* Pods_CocktailGenerator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CocktailGenerator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9711A54B1EBBC623007F4DC4 /* DrinkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrinkViewController.swift; sourceTree = "<group>"; };
+		9711A54B1EBBC623007F4DC4 /* DrinkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DrinkViewController.swift; path = ../DrinkViewController.swift; sourceTree = "<group>"; };
 		97E75F581E87191400A7ED0C /* CocktailGenerator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CocktailGenerator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		97E75F5B1E87191400A7ED0C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		97E75F5D1E87191400A7ED0C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -66,7 +66,6 @@
 		97E75F4F1E87191400A7ED0C = {
 			isa = PBXGroup;
 			children = (
-				9711A54B1EBBC623007F4DC4 /* DrinkViewController.swift */,
 				97E75F5A1E87191400A7ED0C /* CocktailGenerator */,
 				97E75F591E87191400A7ED0C /* Products */,
 				6680F6C2D647D3382086A223 /* Pods */,
@@ -87,6 +86,7 @@
 			children = (
 				97E75F5B1E87191400A7ED0C /* AppDelegate.swift */,
 				97E75F5D1E87191400A7ED0C /* ViewController.swift */,
+				9711A54B1EBBC623007F4DC4 /* DrinkViewController.swift */,
 				97EDC15D1E9835B400ED7540 /* IndexTableViewCell.swift */,
 				97EDC15F1E992C4700ED7540 /* Networking.swift */,
 				97E75F5F1E87191400A7ED0C /* Main.storyboard */,
