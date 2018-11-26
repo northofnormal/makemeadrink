@@ -15,12 +15,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     let bartender = JSONParser()
     var cocktailIndex: [DrinkIndex] = []
     
+    var selectedDrink: Drink? = nil
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         bartender.fetchIndex(handler: { drinkIndex in
             guard let index = drinkIndex else { return }
-            self.cocktailIndex = index as! [DrinkIndex]
+            self.cocktailIndex = index
             self.tableView.reloadData()
         })
     }
@@ -43,9 +45,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cocktail = cocktailIndex[indexPath.row]
-        bartender.fetchDrink(id: cocktail.id, handler: {_ in 
-            print("Holy poopsicles, this worked")
+        bartender.fetchDrink(id: cocktail.id, handler: { drink in
+            self.selectedDrink = drink
+            self.performSegue(withIdentifier: "drinkDetailsSegue", sender: self)
         })
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let segueDestination = segue.destination as? DrinkViewController else { return }
+        
+        segueDestination.drink = selectedDrink
     }
     
 }

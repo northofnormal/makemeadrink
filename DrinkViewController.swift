@@ -10,15 +10,37 @@ import UIKit
 
 class DrinkViewController: UIViewController {
 
+    @IBOutlet weak var nameLabel: UILabel?
+    @IBOutlet weak var ingredientsLabel: UILabel?
+    @IBOutlet weak var instructionsLable: UILabel?
+    @IBOutlet weak var glassLabel: UILabel?
+    
+    var drink: Drink? = nil
+    
+    var viewModel = DrinkViewModel()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        guard let selectedDrink = drink else { return }
+        
+        nameLabel?.text = selectedDrink.name
+        ingredientsLabel?.text = viewModel.ingredientsString(drink: selectedDrink)
+        instructionsLable?.text = selectedDrink.instructions
+        glassLabel?.text = selectedDrink.glass
+    }
 
+    @IBAction func backButtonPressed() {
+        dismiss(animated: true)
+    }
 }
-
 
 struct Drink {
     var name: String
     var id: String
     var glass: String
     var instructions: String
+    
     var ingredient1: String
     var ingredient2: String
     var ingredient3: String

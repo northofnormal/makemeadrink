@@ -9,4 +9,9 @@ target 'CocktailGenerator' do
   # Pods for CocktailGenerator
   pod 'Alamofire', '~> 4.4'
 
+target 'CocktailGeneratorTests' do
+  inherit! :search_paths 
+  pod 'OHHTTPStubs/Swift'
+end
+
 end
